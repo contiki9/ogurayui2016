@@ -1,0 +1,313 @@
+@import "../vender/dlex/mixin";
+@import "../vender/angled-edges/angled-edges";
+@import "https://fonts.googleapis.com/earlyaccess/sawarabimincho.css";
+@import "https://fonts.googleapis.com/css?family=Gilda+Display";
+
+$color-main: #FF3789;
+
+html, body {
+  font-family: 'Gilda Display', 'Sawarabi Mincho', sans-serif;
+  letter-spacing: .1em;
+  position: relative;
+  height: 100%;
+  color: #212121;
+
+}
+
+body {
+  overflow: hidden;
+}
+
+.spbg {
+  display: none;
+    @media screen and(max-width: 560px) {
+      //opacity: .3;
+      background: url("http://img.youtube.com/vi/luF7YxEqLUM/maxresdefault.jpg") center center no-repeat;
+      background-size: auto 100%;
+      display: block;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      content: "";
+      z-index: -1;
+    }
+  }
+
+h1, h2, h3 {
+  letter-spacing: .2em;
+  font-family: 'Gilda Display', 'Sawarabi Mincho', sans-serif;
+}
+
+a {
+  color: $color-main;
+  &:hover {
+    color: $color-main;
+  }
+}
+
+// header
+///////////////
+.l-header {
+  @include flx-row;
+  @include flx-middle;
+  width: 100%;
+  padding: 10px;
+  border-bottom: 1px solid $color-main;
+  background: $color-main;
+  color: #FFF;
+  position: relative;
+  z-index:10;
+
+  a {
+    color: #FFF;
+    &:hover {
+      color: #FFF;
+    }
+  }
+  .left {
+    //@include flx-col;
+    margin-right: auto;
+  }
+
+  .header-title {
+    h1 {
+      font-size: .8rem;
+      color: #FFF;
+      margin-bottom: 0;
+    }
+  }
+}
+
+// nav
+///////////////
+
+.l-gnav {
+  .gnav {
+    @include flx-row;
+    @include flx-middle;
+    margin-bottom: 0;
+    li {
+      margin-right: 2em;
+
+    }
+  }
+}
+
+//conmprnent
+///////////////
+
+.c-sec {
+  padding-top: 100px;
+  padding-bottom: 100px;
+  margin-top: 100px;
+  margin-bottom: 100px;
+  overflow: hidden;
+  width: 100%;
+  //background: rgba(#FFF, .5);
+}
+
+.c-container {
+  max-width: 800px;
+  margin-right: auto;
+  margin-left: auto;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.c-sec-title {
+  text-align: center;
+  margin-bottom: 60px;
+  padding-left: 10px;
+  padding-right: 10px
+}
+
+.c-text {
+  font-size: 1rem;
+  line-height: 1.8;
+  margin-bottom: 1.5em;
+  &.op-text-center {
+    text-align: center;
+  }
+}
+
+.c-btn {
+  border-radius: 4px;
+  background: $color-main;
+  padding: 1em 1em;
+  display: inline-block;
+  color: #FFF;
+  line-height: 1;
+  &:hover {
+    color: #FFF;
+  }
+}
+
+.c-iframe {
+  margin: 50px auto;
+  max-width: 560px;
+
+  @media screen and(max-width: 560px) {
+    position: relative;
+    width: 100%;
+    padding: 75% 0 0 0;
+  }
+
+  @media screen and(max-width: 560px) {
+    iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100% !important;
+      height: 100% !important;
+    }
+  }
+}
+
+.c-flx {
+  @include flx-col;
+  .col {
+    @include flx-col;
+  }
+}
+
+.c-cutting-block {
+  padding-top: 80px;
+  padding-bottom: 80px;
+  margin-bottom: 600px;
+  background: rgba(#FFF, .7);
+  @include angled-edge('outside bottom', 'lower right', rgba(255, 255, 255, .7), 2800, 150);
+  @include angled-edge('outside top', 'upper left', rgba(255, 255, 255, .7), 2800, 150);
+  @media screen and(max-width: 560px) {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background: rgba(#FFF, 1);
+    @include angled-edge('outside bottom', 'lower right', rgba(255, 255, 255, 1), 2800, 150);
+    @include angled-edge('outside top', 'upper left', rgba(255, 255, 255, 1), 2800, 150);
+  }
+}
+
+//project
+///////////////
+.p-load {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  z-index: 10;
+  @include flx-row;
+  @include flx-middle;
+  @include flx-center;
+  background: #FFF;
+}
+
+.p-first-message {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  z-index: 1;
+  @include flx-row;
+  @include flx-middle;
+  @include flx-center;
+  .first-message {
+    background: #FFF;
+    padding: 60px 20px;
+  }
+}
+
+.p-histyory {
+
+  dl {
+    &.op-mt {
+      margin-top: 60px;
+    }
+  }
+
+  dt {
+    font-weight: bold;
+    margin-bottom: 2em;
+    font-size: 1.2rem;
+  }
+  dd {
+    padding-left: 1em;
+    color: #212121;
+    @media screen and(max-width: 560px) {
+      padding-left: 10px;
+      padding-right: 10px;
+    }
+
+  }
+  .left {
+    @media screen and(max-width: 560px) {
+      margin-bottom: 2em;
+    }
+  }
+  time {
+    display: inline-block;
+    margin-right: 1em;;
+  }
+  .histyory-list-box {
+    @extend .c-container;
+  }
+}
+
+@-webkit-keyframes pulse {
+  from {
+    opacity: 1.0; /*透明度100%*/
+  }
+  to {
+    opacity: 0.5; /*透明度80%*/
+  }
+}
+
+.p-blinking {
+  color: $color-main;
+  -webkit-animation-name: pulse;
+  -webkit-animation-duration: 0.5s;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-timing-function: ease-in-out;
+  -webkit-animation-direction: alternate;
+  -webkit-animation-delay: 0s;
+}
+
+.p-tw-shere{
+  margin-top:30px;
+  text-align: center;
+}
+
+//unity
+//////////////
+
+.u-text-center {
+  text-align: center;
+}
+
+.u-color-white {
+  color: #FFF;
+  text-shadow: 0 0 1em rgba(0, 0, 0, 0.9);
+}
+
+// js
+///////////////
+.js-fade {
+  transition: 1s all;
+  opacity: 0;
+}
+
+.js-e-window-maxHeight {
+  position: absolute;
+  top: 5000px;
+  width: 100%;
+  height: 100%;
+}
+
+.js-contents-in {
+  transition: 5s all;
+  top: 0 !important;
+}
