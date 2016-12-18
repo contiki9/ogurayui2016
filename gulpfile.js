@@ -14,7 +14,7 @@ var runSequence = require('run-sequence');
 // sass
 gulp.task('sass', function () {
     console.log('--------- sass task ----------');
-    gulp.src('./doc/assets/sass/**/*.scss')
+    gulp.src('./docs/assets/sass/**/*.scss')
         .pipe(plumber({
             errorHandler: function (err) {
                 console.log(err.messageFormatted);
@@ -28,7 +28,7 @@ gulp.task('sass', function () {
             //minifier: true
             //mqpacker: true
         }))
-        .pipe(gulp.dest('./doc/css/'));
+        .pipe(gulp.dest('./docs/css/'));
     console.log('--------- bs-reload task ----------');
     browserSync.reload();
 });
@@ -37,7 +37,7 @@ gulp.task('sass', function () {
 gulp.task('browser-sync', function () {
     browserSync({
         server: {
-            baseDir: './doc/',
+            baseDir: './docs/',
             index: 'index.html'
         }
     });
@@ -52,8 +52,8 @@ gulp.task('bs-reload', function () {
 
 // gulpのデフォルト
 gulp.task('default', ['browser-sync'], function () {
-    gulp.watch('./doc/assets/sass/**/*.scss', ['sass']);
-    gulp.watch('./doc/**/*.html', ['bs-reload']);
+    gulp.watch('./docs/assets/sass/**/*.scss', ['sass']);
+    gulp.watch('./docs/**/*.html', ['bs-reload']);
 });
 
 
