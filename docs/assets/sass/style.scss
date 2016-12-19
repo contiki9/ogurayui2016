@@ -18,7 +18,9 @@ body {
   overflow: hidden;
 
 }
-
+.spbg{
+  display: none;
+}
 .mobile {
   .spbg {
     display: none;
@@ -26,7 +28,7 @@ body {
     background: url("//img.youtube.com/vi/luF7YxEqLUM/maxresdefault.jpg") center center no-repeat #e0e0e0;
     background-size: auto 100%;
     display: block;
-    position: fixed;
+    position: fixed !important;
     top: 0;
     left: 0;
     width: 100%;
